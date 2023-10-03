@@ -22,6 +22,16 @@
           }
         },
         {
+          "background": "#17ff07",
+          "foreground": "#000000",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "  {{ .UserName }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "session"
+         
+        },
+        {
           "type": "nightscout",
           "style": "diamond",
           "foreground": "#ffffff",
@@ -45,26 +55,15 @@
             "template": " {{.Sgv}}{{.TrendIcon}}"
           }
         },
+        
+        
         {
-          "type": "executiontime",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "#000000",
-          "background": "#26ff00",
-          "template": " <#fefefe></> {{ .FormattedMs }} ",
-          "properties": {
-            "threshold": 500,
-            "style": "austin",
-            "always_enabled": true
-          }
-        }
-       , {
           "type": "git",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
           "foreground": "#193549",
           "background": "#fffb38",
-          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
@@ -137,8 +136,10 @@
           "foreground": "#000000",
           "background": "#9ec3f0",
           "template": " ﴃ {{ .EnvironmentName }}"
-        }
-        ,{
+        },
+    
+
+        {
           "type": "exit",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
